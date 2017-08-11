@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Linq
+namespace Csharp
 {
     public class linqOperators
     {
@@ -53,7 +53,17 @@ namespace Linq
         IEnumerable<int> contact = seq1.Concat(seq2);    // {1,2,3,3,4,5}
         IEnumerable<int> union = seq1.Union(seq2);      // {1,2,3,4,5}
 
+        //Mixed-Syntax Queries : The only restriction is that each query-syntax component must be complete (i.e., start with a from clause and end with a select or group clause). 
+        static string[] friends = { "Tom", "Dick", "Harry", "Mary", "Jay" };
+        int matches = (from n in friends
+                       where n.Contains("a")
+                       select n).Count();
 
+        string first = (from n in friends
+                        orderby n
+                        select n).First();
+
+    
 
     }
 }
