@@ -20,12 +20,20 @@ namespace Csharp
         {
             //Field
             string name;
+            public Panda Mate;
 
             //Constructor
             public Panda(string n)
             {
                 name = n;
                 // Initialization code (set up field) 
+            }
+            public void Marry (Panda partner)
+            {
+                Mate = partner;
+                partner.Mate = this; 
+                //The this reference refers to the instance itself. 
+                //The this reference is valid only within nonstatic members of a class or struct
             }
 
         }
@@ -77,6 +85,13 @@ namespace Csharp
             {
                 Name = n;
             }
+            //OR
+            /*public Bunny(string n, bool likesCarrots = false, bool likesHumans = false)
+            {
+                Name = n;
+                LikesCarrots = likesCarrots;
+                LikesHumans = likesHumans;
+            }*/
         }
 
         //Using object initializers, you can instantiate Bunny objects as follows:
@@ -86,6 +101,7 @@ namespace Csharp
             {
                 Bunny b1 = new Bunny { Name = "Bo", LikesCarrots = true, LikesHumans = false };
                 Bunny b2 = new Bunny("Bo") { LikesCarrots = true, LikesHumans = false };
+                /*Bunny newBunny = new Bunny { Name = "Bo", LikesCarrots = true };*/
 
                 Bunny b3 = new Bunny();
                 b3.Name = "Mo";
@@ -100,6 +116,5 @@ namespace Csharp
             }
 
         }
-
     }
 }
