@@ -17,7 +17,7 @@ namespace Csharp
         unsafe, and partial
         Following YourClassName Generic type parameters, a base class, 
         and interfaces Within the braces Class members(these are methods, properties, indexers, events, fields, constructors, overloaded operators, nested types, and a finalizer)*/
-    public class Class
+    public class ClassBasics
     {
         //Field: is a variable that is a member of a class or struct
 
@@ -68,9 +68,5 @@ namespace Csharp
         void Too(int x) { }
         void Too(ref int x) { }
         // void Too(out int x) { x = 5; } //Compile-error
-
-        //Instance Constructors:
-
-
     }
 }
