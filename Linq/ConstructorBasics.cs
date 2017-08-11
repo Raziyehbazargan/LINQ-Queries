@@ -56,6 +56,48 @@ namespace Csharp
             //Nonpublic constructors:
             /*Constructors do not need to be public. A common reason to have a nonpublic 
             constructor is to control instance creation via a static method call.*/
+            Wine() { } // Private constructor 
+            public static Wine Create
+            {
+                // Perform custom logic here to return an instance of Class1 
+            }
+        }
+
+
+        //Object Initializers: 
+        //any accessible fields or properties of an object can be set via an object initializer directly after construction
+        public class Bunny
+        {
+            public string Name;
+            public bool LikesCarrots;
+            public bool LikesHumans;
+
+            public Bunny() { }
+            public Bunny(string n)
+            {
+                Name = n;
+            }
+        }
+
+        //Using object initializers, you can instantiate Bunny objects as follows:
+        public class Jungle
+        {
+            private void MyBunnies()
+            {
+                Bunny b1 = new Bunny { Name = "Bo", LikesCarrots = true, LikesHumans = false };
+                Bunny b2 = new Bunny("Bo") { LikesCarrots = true, LikesHumans = false };
+
+                Bunny b3 = new Bunny();
+                b3.Name = "Mo";
+                b3.LikesCarrots = true;
+                b3.LikesHumans = true;
+
+                //OR:
+
+                Bunny b4 = new Bunny("Bo");
+                b4.LikesCarrots = true;
+                b4.LikesHumans = true;     
+            }
 
         }
 
