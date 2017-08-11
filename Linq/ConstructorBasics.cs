@@ -20,12 +20,20 @@ namespace Csharp
         {
             //Field
             string name;
+            public Panda Mate;
 
             //Constructor
             public Panda(string n)
             {
                 name = n;
                 // Initialization code (set up field) 
+            }
+            public void Marry (Panda partner)
+            {
+                Mate = partner;
+                partner.Mate = this; 
+                //The this reference refers to the instance itself. 
+                //The this reference is valid only within nonstatic members of a class or struct
             }
 
         }
@@ -108,6 +116,5 @@ namespace Csharp
             }
 
         }
-
     }
 }
